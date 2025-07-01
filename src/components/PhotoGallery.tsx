@@ -1,12 +1,13 @@
 
 const PhotoGallery = () => {
   const photos = [
-    { src: '/placeholder.svg', alt: 'Foto juntos' },
-    { src: '/placeholder.svg', alt: 'Outra foto' },
-    { src: '/placeholder.svg', alt: 'Mais uma' },
-    { src: '/placeholder.svg', alt: 'Foto treino' },
-    { src: '/placeholder.svg', alt: 'Foto pizzaria' }
-  ];
+      { src: '/images/foto1.jpg', alt: 'Foto juntos' },
+      { src: '/images/foto2.jpg', alt: 'Outra foto' },
+      { src: '/images/foto3.jpg', alt: 'Mais uma' },
+      { src: '/images/foto4.jpg', alt: 'Foto treino' },
+      { src: '/images/foto5.jpg', alt: 'Foto pizzaria' }
+];
+
 
   return (
     <section className="flex justify-center gap-6 p-8 flex-wrap">
