@@ -4,39 +4,77 @@ import { Clock, Heart } from 'lucide-react';
 
 const TimeCounter = () => {
   const [timeData, setTimeData] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    nextMonthMessage: '',
+    timeText: '',
+    nextMonthText: '',
+    monthiversaryMessage: '',
     isMonthiversary: false
   });
 
   useEffect(() => {
-    const startDate = new Date('2025-06-08'); // Data do pedido de namoro
+    const dataInicio = new Date(2025, 3, 26); // 26 de abril (mês 3)
     
     const updateCounter = () => {
-      const now = new Date();
-      const diff = now.getTime() - startDate.getTime();
-      
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      
-      // Calcular próximo mesversário
-      const nextMonth = new Date(startDate);
-      nextMonth.setMonth(nextMonth.getMonth() + Math.floor(days / 30) + 1);
-      
-      const isToday = now.toDateString() === nextMonth.toDateString();
-      
+      const agora = new Date();
+      const dataUltimoMesversario = new Date(agora.getFullYear(), agora.getMonth(), 26);
+
+      // Se ainda não chegou o dia 26 neste mês, usa o mês anterior
+      if (agora.getDate() < 26) {
+        dataUltimoMesversario.setMonth(dataUltimoMesversario.getMonth() - 1);
+      }
+
+      // Calcula anos e meses desde dataInicio
+      let anos = agora.getFullYear() - dataInicio.getFullYear();
+      let meses = agora.getMonth() - dataInicio.getMonth();
+
+      if (agora.getDate() < dataInicio.getDate()) {
+        meses--;
+      }
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      const diffDesdeUltimoMesversario = agora - dataUltimoMesversario;
+      const segundosTotais = Math.floor(diffDesdeUltimoMesversario / 1000);
+      const minutosTotais = Math.floor(segundosTotais / 60);
+      const horasTotais = Math.floor(minutosTotais / 60);
+      const dias = Math.floor(horasTotais / 24);
+      const horas = horasTotais % 24;
+      const minutos = minutosTotais % 60;
+      const segundos = segundosTotais % 60;
+
+      // Monta texto
+      let texto = "";
+      if (anos > 0) texto += `${anos} ano${anos > 1 ? "s" : ""}, `;
+      if (meses > 0) texto += `${meses} mes${meses > 1 ? "es" : ""}, `;
+      texto += `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+
+      // Contagem para próximo dia 26
+      let proximo = new Date(agora.getFullYear(), agora.getMonth(), 26);
+      if (agora.getDate() > 26 || (agora.getDate() === 26 && agora.getHours() >= 0)) {
+        proximo.setMonth(proximo.getMonth() + 1);
+      }
+
+      const diff = proximo - agora;
+      const segundosProx = Math.floor(diff / 1000);
+      const minutosProx = Math.floor(segundosProx / 60);
+      const horasProx = Math.floor(minutosProx / 60);
+      const diasProx = Math.floor(horasProx / 24);
+
+      const textoProximo = `⏳ Faltam ${diasProx} dias, ${horasProx % 24} horas, ${minutosProx % 60} minutos e ${segundosProx % 60} segundos para completarmos mais um mês juntos 💖`;
+
+      // Verifica se é dia 26 e mostra mensagem
+      let mensagemMesversario = "";
+      if (agora.getDate() === 26) {
+        const mesesJuntos = (agora.getFullYear() - dataInicio.getFullYear()) * 12 + (agora.getMonth() - dataInicio.getMonth());
+        mensagemMesversario = `🎉 Hoje completamos ${mesesJuntos} mes${mesesJuntos > 1 || mesesJuntos === 0 ? "es" : ""} juntos, meu amor! 💕`;
+      }
+
       setTimeData({
-        days,
-        hours,
-        minutes,
-        seconds,
-        nextMonthMessage: isToday ? '' : `Próximo mesversário em: ${Math.ceil((nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))} dias`,
-        isMonthiversary: isToday
+        timeText: texto,
+        nextMonthText: textoProximo,
+        monthiversaryMessage: mensagemMesversario,
+        isMonthiversary: agora.getDate() === 26
       });
     };
 
@@ -54,36 +92,19 @@ const TimeCounter = () => {
           Eu te amo há:
         </h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-          <div className="bg-pink-100 rounded-lg p-3">
-            <div className="text-2xl font-bold text-purple-800">{timeData.days}</div>
-            <div className="text-sm text-purple-600">dias</div>
-          </div>
-          <div className="bg-pink-100 rounded-lg p-3">
-            <div className="text-2xl font-bold text-purple-800">{timeData.hours}</div>
-            <div className="text-sm text-purple-600">horas</div>
-          </div>
-          <div className="bg-pink-100 rounded-lg p-3">
-            <div className="text-2xl font-bold text-purple-800">{timeData.minutes}</div>
-            <div className="text-sm text-purple-600">min</div>
-          </div>
-          <div className="bg-pink-100 rounded-lg p-3">
-            <div className="text-2xl font-bold text-purple-800">{timeData.seconds}</div>
-            <div className="text-sm text-purple-600">seg</div>
-          </div>
+        <div className="text-lg text-purple-800 mb-4 font-medium">
+          {timeData.timeText}
         </div>
         
         {timeData.isMonthiversary && (
-          <p className="text-lg font-bold text-pink-600 animate-pulse">
-            🎉 Hoje é nosso mesversário! 🎉
+          <p className="text-lg font-bold text-pink-600 animate-pulse mb-4">
+            {timeData.monthiversaryMessage}
           </p>
         )}
         
-        {timeData.nextMonthMessage && (
-          <p className="text-sm text-purple-600 mt-2">
-            ⏳ {timeData.nextMonthMessage}
-          </p>
-        )}
+        <p className="text-sm text-purple-600 leading-relaxed">
+          {timeData.nextMonthText}
+        </p>
       </div>
     </section>
   );

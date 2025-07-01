@@ -2,20 +2,21 @@
 import { useEffect, useState } from 'react';
 
 const FloatingHearts = () => {
-  const [hearts, setHearts] = useState<Array<{ id: number; left: number; delay: number }>>([]);
+  const [hearts, setHearts] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([]);
 
   useEffect(() => {
     const createHeart = () => {
       const newHeart = {
         id: Date.now() + Math.random(),
         left: Math.random() * 100,
-        delay: Math.random() * 2
+        delay: Math.random() * 2,
+        duration: 3 + Math.random() * 3
       };
       
-      setHearts(prev => [...prev.slice(-10), newHeart]); // Mantém apenas 10 corações
+      setHearts(prev => [...prev.slice(-15), newHeart]); // Mantém apenas 15 corações
     };
 
-    const interval = setInterval(createHeart, 2000);
+    const interval = setInterval(createHeart, 500);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,16 +25,14 @@ const FloatingHearts = () => {
       {hearts.map(heart => (
         <div
           key={heart.id}
-          className="absolute animate-[float_7s_linear_infinite] opacity-70"
+          className="absolute animate-[float_var(--duration)_linear_infinite] opacity-70 text-lg"
           style={{
             left: `${heart.left}%`,
-            animationDelay: `${heart.delay}s`
-          }}
+            animationDelay: `${heart.delay}s`,
+            '--duration': `${heart.duration}s`
+          } as React.CSSProperties}
         >
-          <div className="w-4 h-4 bg-pink-300 transform rotate-45 relative">
-            <div className="absolute w-4 h-4 bg-pink-300 rounded-full -top-2 left-0"></div>
-            <div className="absolute w-4 h-4 bg-pink-300 rounded-full -left-2 top-0"></div>
-          </div>
+          ❤️
         </div>
       ))}
     </div>
