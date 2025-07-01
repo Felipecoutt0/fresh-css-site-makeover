@@ -1,0 +1,34 @@
+
+import { Calendar } from 'lucide-react';
+
+const Timeline = () => {
+  const events = [
+    { date: '26/04/2023', event: 'Primeiro beijo (na academia porque somos um casal maromba)' },
+    { date: '27/04/2025', event: 'Primeiro encontro (Sorveteria Italiana)' },
+    { date: '01/05/2025', event: 'Primeiro "eu te amo"' },
+    { date: '10/05/2025', event: 'Primeiro "eu te amo" seu' },
+    { date: '08/06/2025', event: 'Pedido de namoro' },
+    { date: '12/06/2025', event: 'Melhor dia com você até agora (1º dia dos namorados)' },
+    { date: '12/06/2025', event: 'Nosso primeiro dia dos namorados juntos' }
+  ];
+
+  return (
+    <section className="text-center p-8 mx-4 mb-8">
+      <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
+        <h2 className="font-['Pacifico'] text-2xl md:text-3xl text-pink-600 mb-6 flex items-center justify-center gap-2">
+          <Calendar className="w-6 h-6" />
+          Nossas datas (poucas por enquanto)
+        </h2>
+        <ul className="space-y-4">
+          {events.map((item, index) => (
+            <li key={index} className="text-left bg-white/30 rounded-lg p-4 hover:bg-white/50 transition-colors">
+              <strong className="text-purple-800">{item.date}</strong> – {item.event}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+};
+
+export default Timeline;
