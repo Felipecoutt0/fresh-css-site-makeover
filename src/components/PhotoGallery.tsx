@@ -11,7 +11,9 @@ const PhotoGallery = () => {
 
   return (
     <section className="flex justify-center gap-6 p-8 flex-wrap">
-      {photos.map((photo, index) => (
+      {photos.map((photo, idx) => (
+        <img key={idx} src={photo.src} alt={photo.alt} />
+          ))} => (
         <div
           key={index}
           className="w-40 h-40 bg-white p-2 shadow-lg transform -rotate-2 hover:rotate-1 hover:scale-105 transition-all duration-300 rounded-lg border-8 border-white hover:shadow-xl"
