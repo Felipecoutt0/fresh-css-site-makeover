@@ -1,11 +1,11 @@
 
 const PhotoGallery = () => {
   const photos = [
-      { src: '/images/foto1.jpg', alt: 'Foto juntos' },
-      { src: '/images/foto2.jpg', alt: 'Outra foto' },
-      { src: '/images/foto3.jpg', alt: 'Mais uma' },
-      { src: '/images/foto4.jpg', alt: 'Foto treino' },
-      { src: '/images/foto5.jpg', alt: 'Foto pizzaria' }
+      { src: '/foto1.jpg', alt: 'Foto juntos' },
+      { src: '/foto2.jpg', alt: 'Outra foto' },
+      { src: '/foto3.jpg', alt: 'Mais uma' },
+      { src: '/foto4.jpg', alt: 'Foto treino' },
+      { src: '/foto6.jpg', alt: 'Foto pizzaria' }
 ];
 
 
