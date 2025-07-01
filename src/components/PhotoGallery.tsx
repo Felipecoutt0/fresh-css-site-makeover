@@ -1,11 +1,11 @@
 
 const PhotoGallery = () => {
   const photos = [
-    { src: '/placeholder', alt: 'Foto juntos' },
-    { src: 'foto2.jpg', alt: 'Outra foto' },
-    { src: 'foto4.jpg', alt: 'Mais uma' },
-    { src: 'foto5.jpg', alt: 'Foto treino' },
-    { src: 'foto6.jpg', alt: 'Foto pizzaria' }
+    { src: '/placeholder.svg', alt: 'Foto juntos' },
+    { src: '/placeholder.svg', alt: 'Outra foto' },
+    { src: '/placeholder.svg', alt: 'Mais uma' },
+    { src: '/placeholder.svg', alt: 'Foto treino' },
+    { src: '/placeholder.svg', alt: 'Foto pizzaria' }
   ];
 
   return (
