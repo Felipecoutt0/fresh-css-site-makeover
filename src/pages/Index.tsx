@@ -87,8 +87,6 @@ const Index = () => {
         {currentMessage}
       </div>
 
-      {/* Botao de musica teste */}
-      <FloatingMusicButton />
 
       {/* Contador de tempo */}
       <TimeCounter />
