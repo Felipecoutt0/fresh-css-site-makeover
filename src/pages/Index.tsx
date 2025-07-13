@@ -90,6 +90,9 @@ const Index = () => {
       {/* Contador de tempo */}
       <TimeCounter />
 
+      {/* Botao de musica teste */}
+      <FloatingMusicButton />
+
       {/* Galeria de fotos */}
       <PhotoGallery />
 
