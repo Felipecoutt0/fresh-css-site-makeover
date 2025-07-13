@@ -6,6 +6,7 @@ import PhotoGallery from '../components/PhotoGallery';
 import Timeline from '../components/Timeline';
 import LoveLetter from '../components/LoveLetter';
 import TimeCounter from '../components/TimeCounter';
+import MusicBalloon from '../components/MusicBalloon';
 
 const Index = () => {
   const [currentMessage, setCurrentMessage] = useState('');
@@ -86,6 +87,8 @@ const Index = () => {
       }`}>
         {currentMessage}
       </div>
+
+      <MusicBalloon />
 
 
       {/* Contador de tempo */}
