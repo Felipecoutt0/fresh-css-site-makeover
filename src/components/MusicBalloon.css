@@ -1,0 +1,29 @@
+.music-balloon {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: var(--secondary-bg, #f0f0f0);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  user-select: none;
+  max-width: 300px;
+  font-family: var(--font-family, Arial, sans-serif);
+  color: var(--text-color, #222);
+  transition: background-color 0.3s ease;
+}
+
+.music-balloon:hover {
+  background-color: var(--secondary-bg-hover, #e0e0e0);
+}
+
+.music-title {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.music-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #555);
+}
