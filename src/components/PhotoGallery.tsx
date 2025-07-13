@@ -9,6 +9,7 @@ const PhotoGallery = () => {
     { src: '/foto06.jpg', alt: 'Foto pizzaria' }
     { src: '/foto07.jpg', alt: 'foto festa junina' }
   ];
+  
 
   return (
     <section className="flex justify-center gap-6 p-8 flex-wrap">
