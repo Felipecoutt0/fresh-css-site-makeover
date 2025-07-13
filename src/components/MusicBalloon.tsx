@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import "./MusicBalloon.css";
 
 export default function MusicBalloon() {
   const [isPlaying, setIsPlaying] = useState(false);
