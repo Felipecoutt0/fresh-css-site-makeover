@@ -2,7 +2,7 @@ import React from "react";
 
 const PhotoGallery = () => {
   const photos = [
-    { src: '/foto1.jpg', alt: ' },
+    { src: '/foto1.jpg', alt: '' },
     { src: '/foto2.jpg', alt: '' },
     { src: '/foto4.jpg', alt: '' },
     { src: '/foto05.jpg', alt: '' },
