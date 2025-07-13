@@ -88,11 +88,13 @@ const Index = () => {
         {currentMessage}
       </div>
 
-      <MusicBalloon />
+      
 
 
       {/* Contador de tempo */}
       <TimeCounter />
+
+      <MusicBalloon />
 
       
 
