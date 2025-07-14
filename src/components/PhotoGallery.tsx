@@ -7,7 +7,9 @@ const PhotoGallery = () => {
     { src: '/foto4.jpg', alt: '' },
     { src: '/foto05.jpg', alt: '' },
     { src: '/foto06.jpg', alt: '' },
-    { src: '/foto07.jpg', alt: '' }
+    { src: '/foto07.jpg', alt: '' },
+    { src: '/foto08.jpg', alt: '' },
+    { src: '/foto09.jpg', alt: '' }
   ];
   
 
