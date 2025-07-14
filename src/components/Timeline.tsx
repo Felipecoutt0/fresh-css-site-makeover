@@ -9,7 +9,10 @@ const Timeline = () => {
     { date: '10/05/2025', event: 'Primeiro "eu te amo" seu' },
     { date: '08/06/2025', event: 'Pedido de namoro' },
     { date: '12/06/2025', event: 'Melhor dia com você até agora (1º dia dos namorados)' },
-    { date: '12/06/2025', event: 'Nosso primeiro dia dos namorados juntos' }
+    { date: '12/06/2025', event: 'Nosso primeiro dia dos namorados juntos' }, 
+    { date: '12/07/2025', event: 'Nossa festa junina (casal jeca KKKKKKKKKKK)' }, 
+    { date: '13/07/2025', event: 'Passeio com a sua familia no Sambaqui' }, 
+    
   ];
 
   return (
