@@ -13,7 +13,7 @@ const Timeline = () => {
     { date: '12/07/2025', event: 'Nossa festa junina (casal jeca KKKKKKKKKKK)' }, 
     { date: '13/07/2025', event: 'Passeio com a sua familia no Sambaqui' }, 
     { date: '19/07/2025', event: 'Boliche e sinuca com a sua familia' }, 
-    { date: '22/07/2025', event: 'Praia com você, sua mãe e sua irmã' }, 
+    { date: '22/07/2025', event: 'Praia com você, sua mãe e sua irmã' }
     
   ];
 
