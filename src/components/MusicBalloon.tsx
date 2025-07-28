@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-
 const AudioButton = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
