@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import playIcon from '@/assets/play.svg'
-import pauseIcon from '@/assets/pause.svg'
+
 
 const AudioButton = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
