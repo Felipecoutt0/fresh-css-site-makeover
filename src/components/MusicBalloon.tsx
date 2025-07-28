@@ -1,52 +1,46 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useState, useRef } from "react";
+import "./MusicBalloon.css";
 
-const AudioButton = () => {
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+export default function MusicBalloon() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
-
-  const handleClick = () => {
-    const audio = audioRef.current
-    if (!audio) return
+  const togglePlay = () => {
+    if (!audioRef.current) return;
 
     if (isPlaying) {
-      audio.pause()
+      audioRef.current.pause();
     } else {
-      audio.play()
+      audioRef.current.play();
     }
-    setIsPlaying(!isPlaying)
-  }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
-    <>
-      <button
-        id="audioBtn"
-        onClick={handleClick}
-        className={`z-50 hover:scale-110 transition-transform duration-300 ${
-          isMobile
-            ? 'fixed bottom-5 right-5 bg-white p-2 rounded-full shadow-md'
-            : 'absolute top-5 right-5'
-        }`}
-      >
-        <img src={isPlaying ? pauseIcon : playIcon} alt="Audio" className="w-6 h-6" />
-      </button>
-
-      <audio ref={audioRef} loop>
-        <source src="/music.mp3" type="audio/mpeg" />
-        Seu navegador não suporta o elemento de áudio.
-      </audio>
-    </>
-  )
+    <div style={{
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      backgroundColor: "#eee",
+      borderRadius: "10px",
+      padding: "15px",
+      boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+      cursor: "pointer",
+      userSelect: "none",
+      maxWidth: "250px",
+      fontFamily: "Arial, sans-serif"
+    }} onClick={togglePlay}>
+      <p style={{margin: 0, fontWeight: "bold"}}>
+        🎵 Tudo Que Você Quiser - Luan Santana
+      </p>
+      <p style={{margin: 0, fontSize: "0.9em", color: "#555"}}>
+        Clique para {isPlaying ? "pausar" : "tocar"}
+      </p>
+      <audio
+        ref={audioRef}
+        src="Luan Santana - Tudo que você quiser - (DVD O nosso tempo é hoje).mp3"
+        preload="none"
+      />
+    </div>
+  );
 }
-
-export default AudioButton
