@@ -76,20 +76,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
-@media (max-width: 768px) {
-  #audioBtn {
-    position: fixed !important;
-    bottom: 20px !important;
-    top: auto !important;
-    right: 20px !important;
-    z-index: 9999;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
   
-}
 
 
 @layer base {
