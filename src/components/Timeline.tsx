@@ -3,7 +3,7 @@ import { Calendar } from 'lucide-react';
 
 const Timeline = () => {
   const events = [
-    { date: '26/04/2023', event: 'Primeiro beijo (na academia porque somos um casal maromba)' },
+    { date: '26/04/2025', event: 'Primeiro beijo (na academia porque somos um casal maromba)' },
     { date: '27/04/2025', event: 'Primeiro encontro (Sorveteria Italiana)' },
     { date: '01/05/2025', event: 'Primeiro "eu te amo"' },
     { date: '10/05/2025', event: 'Primeiro "eu te amo" seu' },
@@ -14,7 +14,7 @@ const Timeline = () => {
     { date: '13/07/2025', event: 'Passeio com a sua familia no Sambaqui' }, 
     { date: '19/07/2025', event: 'Boliche e sinuca com a sua familia' }, 
     { date: '22/07/2025', event: 'Praia com você, sua mãe e sua irmã' },
-    { date: '(26/27)/07/2025', event: 'Viajem com a sua familia para Bom Retiro' }
+    { date: '(26/27)/07/2025', event: 'Viajem com a sua familia pra Bom Retiro' }
     
   ];
 
