@@ -14,7 +14,8 @@ const Timeline = () => {
     { date: '13/07/2025', event: 'Passeio com a sua familia no Sambaqui' }, 
     { date: '19/07/2025', event: 'Boliche e sinuca com a sua familia' }, 
     { date: '22/07/2025', event: 'Praia com você, sua mãe e sua irmã' },
-    { date: '(26/27)/07/2025', event: 'Viajem com a sua familia pra Bom Retiro' }
+    { date: '(26/27)/07/2025', event: 'Viajem com a sua familia pra Bom Retiro' },
+    { date: '07/08/2025', event: 'Primeiro buquê de flores' }
     
   ];
 
