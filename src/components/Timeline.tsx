@@ -3,6 +3,7 @@ import { Calendar } from 'lucide-react';
 
 const Timeline = () => {
   const events = [
+    { date: '20/04/2025', event: 'Primeira mensagem' },
     { date: '26/04/2025', event: 'Primeiro beijo (na academia porque somos um casal maromba)' },
     { date: '27/04/2025', event: 'Primeiro encontro (Sorveteria Italiana)' },
     { date: '01/05/2025', event: 'Primeiro "eu te amo"' },
