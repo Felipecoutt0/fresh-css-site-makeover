@@ -19,6 +19,9 @@ const Timeline = () => {
     { date: '07/08/2025', event: 'Primeiro buquê de flores' },
     { date: '31/08/2025', event: 'Festa de aniversario da Laurinha' },
     { date: '03/09/2025', event: 'Melhor aniversario da minha vida (com voce, nao tinha como ser ruim)' },
+    { date: '20/11/2025', event: 'Viagem pra cabana em Bom Retiro' },
+    { date: '22/11/2025', event: 'Vimos o nascer do sol juntos ' },
+   
     
   ];
 
