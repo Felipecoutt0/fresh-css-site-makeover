@@ -17,7 +17,7 @@ const PhotoGallery = () => {
     { src: '/foto14.jpg', alt: '' },
     { src: '/foto15.jpg', alt: '' },
     { src: '/foto16.jpg', alt: '' },
-    { src: '/fotoBuque.jpg', alt: '' },
+    { src: '/buqueViagem.jpg', alt: '' },
     { src: '/fotoViagem1.jpg', alt: '' },
     { src: '/fotoViagem2.jpg', alt: '' }
   ];
