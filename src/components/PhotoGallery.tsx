@@ -22,7 +22,7 @@ const PhotoGallery = () => {
     { src: '/buqueViagem.jpg', alt: '' },
     { src: '/fotoViagem1.jpg', alt: '' },
     { src: '/fotoViagem2.jpg', alt: '' },
-    { src: '/anonovo.jpeg', alt: '' }
+    { src: '/anonovo2.jpeg', alt: '' }
   ];
   
 
