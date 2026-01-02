@@ -21,6 +21,7 @@ const Timeline = () => {
     { date: '03/09/2025', event: 'Melhor aniversario da minha vida (com voce, nao tinha como ser ruim)' },
     { date: '20/11/2025', event: 'Viagem pra cabana em Bom Retiro' },
     { date: '22/11/2025', event: 'Vimos o nascer do sol juntos ' },
+    { date: '01/01/2026', event: 'Primeiro ano novo juntos ' },
    
     
   ];
