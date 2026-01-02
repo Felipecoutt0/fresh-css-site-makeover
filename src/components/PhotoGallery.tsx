@@ -21,7 +21,8 @@ const PhotoGallery = () => {
     { src: '/buqueUlt.jpg', alt: '' },
     { src: '/buqueViagem.jpg', alt: '' },
     { src: '/fotoViagem1.jpg', alt: '' },
-    { src: '/fotoViagem2.jpg', alt: '' }
+    { src: '/fotoViagem2.jpg', alt: '' },
+    { src: '/anonovo.jpeg', alt: '' }
   ];
   
 
